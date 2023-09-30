@@ -12,9 +12,7 @@ const MainDashboard = () => {
                 <h1 className="text-4xl">EduSearch</h1>
                 <Link className="text-3xl text-add3-300 hover:text-add3-500" to="/search">Search</Link>
             </header>
-            <main>
-                <Outlet/>
-            </main>
+            <Outlet/>
         </motion.div>
     )
 }
