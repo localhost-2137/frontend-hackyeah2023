@@ -21,7 +21,7 @@ const Main = () => {
                 </div>
 
             </header>
-            <main>
+            <main className="h-full">
                 <Outlet/>
             </main>
         </motion.div>
