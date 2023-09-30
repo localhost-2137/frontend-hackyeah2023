@@ -29,7 +29,7 @@ const Search = () => {
       >
         <Filters />
         <div className="w-[2px] min-h-full bg-dark-300"></div>
-        <AcademyList />
+        <AcademyList universities={universities}/>
       </motion.div>
     );
 };

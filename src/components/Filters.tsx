@@ -1,5 +1,4 @@
 import Button from "./ui/Button.tsx";
-import Input from "./ui/Input.tsx";
 import { useShowFilter } from "../hooks/useShowFilter.tsx";
 import Checkbox from "./ui/Checkbox.tsx";
 import Autocomplete from "./ui/Autocomplete.tsx";
@@ -12,7 +11,6 @@ const Filters = () => {
     const [cities, setCities] = useState<string[]>([]);
     const [selectedCities, setSelectedCities] = useState<string[]>([]);
 
-    const courses = t('courses', { returnObjects: true });
     const {
         showFilter: showLocalization,
         showFilterBtn: localizationBtn,
@@ -28,7 +26,7 @@ const Filters = () => {
         setSelectedCities(selectedOption);
     };
 
-    const handleSearch = (event: SubmitEvent) => {
+    const handleSearch = (event: any) => {
         event.preventDefault();
         console.log(selectedCities);
     }
@@ -56,10 +54,9 @@ const Filters = () => {
                 <h4>Coursers</h4>
                 <Button onClick={toggleCourses} type="button" className="text-xl p-0">{coursersBtn}</Button>
             </div>
-            {showCourses && <div
-                className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-8 border-add1-500 p-4">
-                {courses.map((course: any) => {
-                    return <Checkbox id={course} label={course} />
+            {showCourses && <div className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-4 border-dark-300 p-4 rounded-xl">
+                {(t("courses", { returnObjects: true }) as any).map((course: any) => {
+                    return <Checkbox key={course} id={course} label={course} />;
                 })}
             </div>}
             <div className="py-4">
