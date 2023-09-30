@@ -5,7 +5,7 @@ import Tag from './Tag';
 interface AutocompleteProps {
     placeholder: string;
     options: string[];
-    onSelect: (value: string) => void;
+    onSelect: (value: string[]) => void;
 }
 
 const Autocomplete: React.FC<AutocompleteProps> = ({ options, onSelect, placeholder }) => {
@@ -20,7 +20,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({ options, onSelect, placehol
         setInputValue('');
         const newCities = [...selectedCities, value];
         setSelectedCities(newCities);
-        onSelect(newCities];
+        onSelect(newCities);
     };
 
     const handleRemoveCity = (city: string) => {
