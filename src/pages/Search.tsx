@@ -1,8 +1,25 @@
+import { useEffect, useState } from "react";
 import Filters from "../components/Filters.tsx";
 import AcademyList from "../components/AcademyList.tsx";
 import { motion } from "framer-motion";
 
 const Search = () => {
+    
+    const [universities, setUniversities] = useState<any>([]);
+    
+    useEffect(() => {
+
+        const getData = async () => {
+            const response = await fetch("src/data/universities.json")
+            const data = await response.json()
+            if (response.ok) {
+                setUniversities(data)
+            }
+        }
+
+        getData()
+    }, []);
+
     return (
       <motion.div
         initial={{ opacity: 0 }}
