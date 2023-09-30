@@ -22,7 +22,7 @@ const Filters = () => {
         toggleShowFilter: toggleCourses
     } = useShowFilter()
 
-    const handleSelect = (selectedOption) => {
+    const handleSelect = (selectedOption: any) => {
         setSelectedCities(selectedOption);
     };
 
@@ -55,7 +55,7 @@ const Filters = () => {
                 <Button onClick={toggleCourses} type="button" className="text-xl p-0">{coursersBtn}</Button>
             </div>
             {showCourses && <div className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-4 border-dark-300 p-4 rounded-xl">
-                {(t("courses", { returnObjects: true }) as any).map((course: any) => {
+                {(t("(courses", { returnObjects: true }) as any) as any).map((course: any) => {
                     return <Checkbox key={course} id={course} label={course} />;
                 })}
             </div>}
