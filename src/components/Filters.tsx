@@ -1,4 +1,5 @@
 import Button from "./ui/Button.tsx";
+import Input from "./ui/Input.tsx";
 import { useShowFilter } from "../hooks/useShowFilter.tsx";
 import Checkbox from "./ui/Checkbox.tsx";
 import Autocomplete from "./ui/Autocomplete.tsx";
@@ -70,6 +71,6 @@ const Filters = () => {
             <Button type="submit" variant="red" onClick={handleSearch}>{t('search')}</Button>
         </form>
     )
-}
+};
 
 export default Filters;
