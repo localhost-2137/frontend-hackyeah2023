@@ -4,22 +4,27 @@ import {AnimatePresence} from "framer-motion";
 import {cloneElement} from "react";
 import SurveyLandingPage from "./pages/Survey/SurveyLandingPage.tsx";
 import IndexInfo from "./components/IndexInfo.tsx";
+import SurveyComponent from "./pages/Survey/SurveyComponent.tsx";
 import Search from "./pages/Search.tsx";
 
 const App = () => {
     const element = useRoutes([
-        {
-            path: "/",
-            element: <Main/>,
-            children: [
-                {path: "/", element: <IndexInfo/>},
-                {path: "/search", element: <Search />}
-            ]
-        },
-        {
-            path: "/survey",
-            element: <SurveyLandingPage/>
-        }
+      {
+        path: "/",
+        element: <Main />,
+        children: [
+          { path: "/", element: <IndexInfo /> },
+          {path: "/search", element: <Search />},
+        ],
+      },
+      {
+        path: "/survey",
+        element: <SurveyLandingPage />,
+      },
+      {
+        path: "/survey/:id",
+        element: <SurveyComponent />,
+      },
     ]);
 
     const location = useLocation();

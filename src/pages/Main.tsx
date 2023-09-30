@@ -1,10 +1,9 @@
 import {motion} from "framer-motion"
 import {Outlet, Link} from "react-router-dom"
-import {useTranslation} from 'react-i18next';
 import LanguageSwitcher from "../components/LanguageSwitcher";
+import Button from "../components/ui/Button.tsx";
 
 const Main = () => {
-    const {t} = useTranslation();
 
     return (
         <motion.div
