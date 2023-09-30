@@ -13,7 +13,7 @@ export default function SurveyLandingPage() {
         className="flex flex-col items-center justify-center h-screen px-4"
       >
         <p className="text-center text-4xl">{t("surveyDescription")}</p>
-        <Button className="mt-10">{t("surveyLandingPageButton")}</Button>
+        <Button isLink={true} to="/survey/1" className="mt-10">{t("surveyLandingPageButton")}</Button>
       </motion.div>
     );
 }
