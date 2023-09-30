@@ -1,3 +1,6 @@
 import { atom } from "jotai";
 
-export const surveyAnswersAtom = atom(0);
+const surveyAnswersAtom = atom<any>(0);
+const languageAtom = atom<any>("en");
+
+export { surveyAnswersAtom, languageAtom };
