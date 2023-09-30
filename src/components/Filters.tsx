@@ -30,11 +30,18 @@ const Filters = () => {
                 <h4>Coursers</h4>
                 <Button onClick={toggleCourses} type="button" className="text-xl p-0">{coursersBtn}</Button>
             </div>
-            {showCourses && <div className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-8 border-add1-500 p-4">
+            {showCourses && <div
+                className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-8 border-add1-500 p-4">
                 {coursers.map((course, id) => {
                     return <Checkbox id={id} label={course}/>
                 })}
             </div>}
+            <div className="py-4">
+                <h4>Others</h4>
+            </div>
+            <div className="flex flex-col items-start p-4">
+                <Checkbox id="academy" label="Consider boarding school"/>
+            </div>
         </form>
     )
 }
