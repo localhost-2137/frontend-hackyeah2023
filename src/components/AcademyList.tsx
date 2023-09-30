@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const AcademyList = () => {
 
-    const [universities, setUniversities] = useState([])
+    const [universities, setUniversities] = useState<any>([])
 
     useEffect(() => {
 
