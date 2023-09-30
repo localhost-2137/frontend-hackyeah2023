@@ -27,7 +27,7 @@ const Search = () => {
     >
       <Filters />
       <div className="w-[2px] min-h-full bg-dark-300"></div>
-      <AcademyList universities={universities}universities={universities} />
+      <AcademyList universities={universities} />
     </motion.div>
   );
 };
