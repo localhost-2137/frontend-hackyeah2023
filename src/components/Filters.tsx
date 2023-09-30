@@ -7,10 +7,11 @@ import { useEffect, useState } from "react";
 import { getAllCities } from "../backend.ts";
 
 const Filters = () => {
-    const [cities, setCities] = useState<string[]>([]);
-
     const { t } = useTranslation();
+    const [cities, setCities] = useState<string[]>([]);
+    const [selectedCities, setSelectedCities] = useState<string[]>([]);
 
+    const courses = t('courses', { returnObjects: true });
     const {
         showFilter: showLocalization,
         showFilterBtn: localizationBtn,
@@ -23,8 +24,13 @@ const Filters = () => {
     } = useShowFilter()
 
     const handleSelect = (selectedOption) => {
-        console.log("Selected option:", selectedOption);
+        setSelectedCities(selectedOption);
     };
+
+    const handleSearch = (event: SubmitEvent) => {
+        event.preventDefault();
+        console.log(selectedCities);
+    }
 
     useEffect(() => {
         const getData = async () => {
@@ -37,7 +43,7 @@ const Filters = () => {
 
 
     return (
-        <form>
+        <form onSubmit={handleSearch}>
             <div className="flex gap-4 items-center">
                 <h4>Localization</h4>
                 <Button onClick={toggleLocalization} type="button" className="text-xl p-0">{localizationBtn}</Button>
@@ -51,9 +57,9 @@ const Filters = () => {
             </div>
             {showCourses && <div
                 className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-8 border-add1-500 p-4">
-                {/* {coursers.map((course) => {
+                {courses.map((course: any) => {
                     return <Checkbox id={course} label={course} />
-                })} */}
+                })}
             </div>}
             <div className="py-4">
                 <h4>Others</h4>
@@ -61,6 +67,7 @@ const Filters = () => {
             <div className="flex flex-col items-start p-4">
                 <Checkbox id="academy" label="Consider boarding school" />
             </div>
+            <Button type="submit" variant="red" onClick={handleSearch}>{t('search')}</Button>
         </form>
     )
 }
