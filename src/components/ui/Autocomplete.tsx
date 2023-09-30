@@ -36,7 +36,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({ options, onSelect, placehol
     };
     return (
         <div className="relative flex flex-col gap-3">
-            <div className="flex flex-row gap-3 items-center relative z-50">
+            <div className="flex flex-row gap-3 items-center relative z-50 flex-wrap">
                 {selectedCities.map((city, index) => (
                     <div key={index}>
                         <Tag text={city} />
