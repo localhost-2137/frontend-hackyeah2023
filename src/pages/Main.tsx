@@ -1,7 +1,6 @@
 import {motion} from "framer-motion"
 import {Outlet, Link} from "react-router-dom"
 import LanguageSwitcher from "../components/LanguageSwitcher";
-import Button from "../components/ui/Button.tsx";
 
 const Main = () => {
 
@@ -20,7 +19,7 @@ const Main = () => {
                 </div>
 
             </header>
-            <main>
+            <main className="flex-1">
                 <Outlet/>
             </main>
         </motion.div>
