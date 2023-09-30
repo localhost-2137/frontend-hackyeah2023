@@ -9,15 +9,20 @@ type ButtonProps = {
     isLink?: boolean;
     to?: string;
     variant?: "green" | "red" | "yellow"
+    onClick?: () => void;
 };
 
-const Button = ({children, type, className, isLink, to, variant}: ButtonProps) => {
+const Button = ({children, type, className, isLink, to, variant, onClick}: ButtonProps) => {
 
     if (isLink && to) {
         return (
-            <Link to={to} className={`border-none px-4 py-5 ${className} `}>
-                {children}
-            </Link>
+          <Link
+            to={to}
+            className={`border-none px-4 py-5 ${className}`}
+            onClick={onClick}
+          >
+            {children}
+          </Link>
         );
     }
 
@@ -34,9 +39,13 @@ const Button = ({children, type, className, isLink, to, variant}: ButtonProps) =
     }
 
     return (
-        <button type={type} className={`border-none px-4 py-5 ${className}`}>
-            {children}
-        </button>
+      <button
+        type={type}
+        className={`border-none px-4 py-5 ${className}`}
+        onClick={onClick}
+      >
+        {children}
+      </button>
     );
 };
 
