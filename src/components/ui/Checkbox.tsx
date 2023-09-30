@@ -9,10 +9,17 @@ type CheckboxProps = {
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props: CheckboxProps, ref) => {
     return (
-        <div className="flex items-center justify-center">
-            <input type="checkbox" {...props} className={`${props.className}`} ref={ref} />
-            <label htmlFor={props.id} className="ml-2">{props.label}</label>
-        </div>
+      <div className="flex items-center justify-center gap-2">
+        <input
+          type="checkbox"
+          {...props}
+          className={`${props.className}`}
+          ref={ref}
+        />
+        <label htmlFor={props.id} className="text-l truncate cursor-pointer" title={props.label}>
+          {props.label}
+        </label>
+      </div>
     );
 });
 
