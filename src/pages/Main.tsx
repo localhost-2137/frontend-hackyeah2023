@@ -20,7 +20,7 @@ const Main = () => {
                 </div>
 
             </header>
-            <main>
+            <main className="h-full w-full">
                 <Outlet/>
             </main>
         </motion.div>
