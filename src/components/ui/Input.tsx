@@ -3,6 +3,7 @@ import {forwardRef} from "react";
 type InputProps = {
     type: string,
     placeholder?: string,
+    onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void,
     className?: string,
     value?: string,
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
