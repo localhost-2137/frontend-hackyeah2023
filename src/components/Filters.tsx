@@ -32,8 +32,8 @@ const Filters = () => {
             </div>
             {showCourses && <div
                 className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-8 border-add1-500 p-4">
-                {coursers.map((course, id) => {
-                    return <Checkbox id={id} label={course}/>
+                {coursers.map((course) => {
+                    return <Checkbox id={course} label={course}/>
                 })}
             </div>}
             <div className="py-4">
