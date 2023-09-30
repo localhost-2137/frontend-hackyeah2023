@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 type ButtonProps = {
+
     children: React.ReactNode;
     type?: "button" | "submit" | "reset";
     className?: string;
