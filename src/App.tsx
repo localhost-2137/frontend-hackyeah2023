@@ -1,19 +1,19 @@
 import {useLocation, useRoutes} from "react-router-dom";
-import MainDashboard from "./pages/MainDashboard.tsx";
-import {AnimatePresence} from "framer-motion";
-import {cloneElement} from "react";
-import IndexInfo from "./components/IndexInfo.tsx";
+import Main from "./pages/Main.tsx";
+import { AnimatePresence } from "framer-motion";
+import { cloneElement } from "react";
+import SurveyLandingPage from "./pages/Survey/SurveyLandingPage.tsx";
 
 const App = () => {
     const element = useRoutes([
-        {
-            path: "/",
-            element: <MainDashboard/>,
-            children: [
-                {path: "/", element: <IndexInfo/>},
-                {path: "/search", element: <p>Search</p>},
-            ]
-        },
+      {
+        path: "/",
+        element: <Main />,
+      },
+      {
+        path: "/survey",
+        element: <SurveyLandingPage />
+      }
     ]);
 
     const location = useLocation();
