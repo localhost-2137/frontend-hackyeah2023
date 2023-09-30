@@ -28,4 +28,4 @@ const IndexInfo = () => {
     );
 }
 
-export default IndexInfo
+export default IndexInfo;
