@@ -12,6 +12,7 @@ const App = () => {
             element: <Main/>,
             children: [
                 {path: "/", element: <IndexInfo/>},
+                {path: "/search", element: <p>Search</p>}
             ]
         },
         {
