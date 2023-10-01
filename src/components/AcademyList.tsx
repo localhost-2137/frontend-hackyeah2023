@@ -11,7 +11,7 @@ const AcademyList = (props: { universities: University[] }) => {
             key={university.id}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { delay: 0.15 * i } }}
-            className="p-4 border-2 border-dark-300 hover:bg-dark-900 rounded-xl transition-colors duration-300 max-[800px]:w-[90%] max-[800px]:items-center max-[800px]:mx-auto max-[800px]:text-center overflow-x-hidden"
+            className="p-4 border-2 border-dark-300 hover:bg-dark-500 rounded-xl transition-colors duration-300 max-[800px]:w-[90%] max-[800px]:items-center max-[800px]:mx-auto max-[800px]:text-center overflow-x-hidden"
           >
             <Link
               to={`/university/${university.id}`}

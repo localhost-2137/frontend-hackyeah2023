@@ -1,16 +1,16 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import {useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
 import Map from "../components/Map";
-import { useTranslation } from "react-i18next";
-import { getSingleUniversity } from "../logic/backend";
+import {useTranslation} from "react-i18next";
+import {getSingleUniversity} from "../logic/backend";
 import en from "../locales/en.json";
 import pl from "../locales/pl.json";
 import i18n from "../logic/i18n";
 
 const University = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const [university, setUniversity] = useState<any>([]);
-    const { id } = useParams();
+    const {id} = useParams();
     useEffect(() => {
         const getData = async () => {
             if (!id) return;
@@ -20,7 +20,6 @@ const University = () => {
         };
         getData();
     }, [id]);
-
 
 
     return (
@@ -47,8 +46,8 @@ const University = () => {
                     <p>
                         {t("university-academic")}: {university.academic ? t("yes") : t("no")}
                     </p>
-                    <p>
-                        {t("university-subjects")}: {" "} 
+                    <div className="flex items-center flex-wrap gap-x-6 gap-y-3">
+                        <p>{t("university-subjects")}: {" "}</p>
                         {university.subjects && university.subjects.map((subject: string) => {
                             let indexValue = -1;
                             en.courses.forEach((course: string, index: number) => {
@@ -57,14 +56,14 @@ const University = () => {
                                 }
                             });
                             if (i18n.language === "pl") {
-                                return pl.courses[indexValue];
+                                return (<p className="bg-dark-300 px-4 py-2">{pl.courses[indexValue]}</p>);
                             } else {
-                                return en.courses[indexValue];
+                                return (<p className="bg-dark-300 px-4 py-2">{en.courses[indexValue]}</p>);
                             }
-                        }).join(", ")}
-                    </p>
+                        })}
+                    </div>
 
-                    <Map lat={university.lat} lng={university.lng} />
+                    <Map lat={university.lat} lng={university.lng}/>
                 </div>
             )}
 
