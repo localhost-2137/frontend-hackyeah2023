@@ -16,7 +16,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) 
     return (
       <input
         {...props}
-        className={`border-dark-300 border-4 px-4 py-2 text-xl shadow-button-add1 rounded ${className}`}
+        className={`border-dark-300 border-4 px-4 py-2 text-xl shadow-button-add1 rounded-xl ${className}`}
         ref={ref}
       />
     );
