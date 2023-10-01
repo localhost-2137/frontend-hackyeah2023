@@ -76,9 +76,9 @@ export default function SurveyComponent() {
                 id !== "16" && "justify-center"
             } mt-16 mb-16 min-h-screen px-4 gap-32`}
         >
-            <Link to="/" className="absolute top-4 left-4">
+            <Button isLink={true} variant="yellow" to="/" className="absolute top-4 left-4">
                 {t("back")}
-            </Link>
+            </Button>
             <p className="text-center max-[600px]:text-2xl min-[1000px]:text-4xl max-[600px]:max-w-[100%] min-[1200px]:max-w-[60%]">
                 {t(`survey${id}Title`)}
             </p>
