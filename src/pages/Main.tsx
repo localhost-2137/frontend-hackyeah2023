@@ -11,7 +11,7 @@ const Main = () => {
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
         className={"flex flex-col items-center h-screen w-full"}
       >
-        <header className="w-full max-w-[1300px] p-6 flex justify-between items-center">
+        <header className="w-full max-w-[1300px] p-6 flex justify-between items-center max-[600px]:gap-8 max-[600px]:flex-col">
           <Link to="/">
             <h1 className="text-4xl">EduSearch</h1>
           </Link>

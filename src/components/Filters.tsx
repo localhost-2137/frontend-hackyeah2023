@@ -58,37 +58,42 @@ const Filters = (props: {
     }, []);
 
     return (
-        <form onSubmit={handleSearch}>
-            <div className="flex gap-4 items-center">
-                <h4>{t('localization')}</h4>
-            </div>
-            <div>
-                <Autocomplete
-                    options={cities}
-                    onSelect={handleSelect}
-                    placeholder={t("city")}
-                />
-            </div>
-            <div className="flex gap-4 items-center mt-3 mb-3 py-4">
-                <h4>{t('coursesStr')}</h4>
-            </div>
-            <div className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-4 border-dark-300 p-4 rounded-xl">
-                {(t("courses", { returnObjects: true }) as any).map((course: string) => {
-                    return <Checkbox key={course} id={course} label={course} onChange={(event) => {
+      <form
+        onSubmit={handleSearch}
+        className="max-[600px]:w-[90%] max-[600px]:flex max-[600px]:flex-col max-[600px]:gap-4 max-[600px]:mx-auto max-[600px]:mb-8"
+      >
+        <div className="flex gap-4 items-center">
+          <h4>{t("localization")}</h4>
+        </div>
+        <div>
+          <Autocomplete
+            options={cities}
+            onSelect={handleSelect}
+            placeholder={t("city")}
+          />
+        </div>
+        <div className="flex gap-4 items-center mt-3 mb-3 py-4">
+          <h4>{t("coursesStr")}</h4>
+        </div>
+        <div className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-4 border-dark-300 p-4 rounded-xl box-border">
+          {(t("courses", { returnObjects: true }) as any).map(
+            (course: string) => {
+              return <Checkbox key={course} id={course} label={course} onChange={(event) => {
                         handleCourseSelect(course, event.target.checked);
                     }} />;
-                })}
-            </div>
-            <div className="py-4">
-                <h4>{t('others')}</h4>
-            </div>
-            <div className="flex flex-col items-start mb-4">
-                <Checkbox id="academy" label={t('considerBoardingSchool')} />
-            </div>
-            <Button type="submit" variant="red">
-                {t("search")}
-            </Button>
-        </form>
+            }
+          )}
+        </div>
+        <div className="py-4">
+          <h4>{t("others")}</h4>
+        </div>
+        <div className="flex flex-col items-start mb-4">
+          <Checkbox id="academy" label={t("considerBoardingSchool")} />
+        </div>
+        <Button type="submit" variant="red">
+          {t("search")}
+        </Button>
+      </form>
     );
 };
 
