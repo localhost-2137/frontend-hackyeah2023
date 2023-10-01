@@ -77,7 +77,7 @@ const Filters = () => {
       <div className="py-4">
         <h4>Others</h4>
       </div>
-      <div className="flex flex-col items-start p-4">
+      <div className="flex flex-col items-start mb-4">
         <Checkbox id="academy" label="Consider boarding school" />
       </div>
       <Button type="submit" variant="red">
