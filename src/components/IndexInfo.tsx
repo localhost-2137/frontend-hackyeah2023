@@ -19,7 +19,7 @@ const IndexInfo = () => {
                     alt="EduSearch Logo"
                     className="w-96 hidden md:block"
                 />
-                <div className="flex flex-col w-128 gap-5 ml-10">
+                <div className="flex flex-col w-128 gap-5">
                     <h1 className="text-5xl">EduSearch</h1>
                     <p className="max-w-[400px] text-xl">{t("index-info-1")}</p>
                     <p className="max-w-[400px] text-xl">{t("index-info-2")}</p>
