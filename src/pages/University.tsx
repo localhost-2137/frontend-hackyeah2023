@@ -6,7 +6,7 @@ import {useTranslation} from "react-i18next";
 const University = () => {
 
     const {t} = useTranslation();
-    const [university, setUniversity] = useState([])
+    const [university, setUniversity] = useState<any>([])
     const {id} = useParams()
 
     useEffect(() => {
