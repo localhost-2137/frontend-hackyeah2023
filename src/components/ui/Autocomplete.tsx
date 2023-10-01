@@ -16,6 +16,12 @@ const Autocomplete: React.FC<AutocompleteProps> = ({ options, onSelect, placehol
         setInputValue(event.target.value);
     };
 
+    const handleDelete = (city: string) => {
+        const newCities = selectedCities.filter((c) => c !== city);
+        setSelectedCities(newCities);
+        onSelect(newCities);
+    };
+
     const handleOptionClick = (value: string) => {
         setInputValue('');
         const newCities = [...selectedCities, value];
@@ -39,7 +45,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({ options, onSelect, placehol
             <div className="flex flex-row gap-3 items-center relative z-50 flex-wrap">
                 {selectedCities.map((city, index) => (
                     <div key={index}>
-                        <Tag text={city} />
+                        <Tag text={city} handleDelete={handleDelete} />
                     </div>
                 ))}
             </div>
