@@ -1,6 +1,7 @@
 export interface University {
     academic: boolean;
     address: string;
+    city: string;
     id: number;
     lat: number;
     lng: number;

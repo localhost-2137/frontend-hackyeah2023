@@ -19,3 +19,8 @@ export const searchUniversities = async (query: string) => {
   const response = await backendRequest("search" + query);
   return await response.json();
 };
+
+export const getSingleUniversity = async (id: number) => {
+  const response = await backendRequest("university/" + id);
+  return await response.json();
+};
