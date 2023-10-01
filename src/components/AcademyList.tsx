@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import {  Link  } from "react-router-dom";
+import { University } from "../logic/types";
 
 const AcademyList = (props: {
-    universities: any;
+    universities: University[];
 }) => {
     return (
         <div className="flex flex-col justify-center gap-6 cursor-pointer">
-            {props.universities.map((university: any, i: number) => {
+            {props.universities.map((university: University, i: number) => {
                 return (
                     <motion.div
                         initial={{ opacity: 0 }}

@@ -3,8 +3,8 @@ import { useShowFilter } from "../hooks/useShowFilter.tsx";
 import Checkbox from "./ui/Checkbox.tsx";
 import Autocomplete from "./ui/Autocomplete.tsx";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
-import { getAllCities } from "../backend.ts";
+import { SyntheticEvent, useEffect, useState } from "react";
+import { getAllCities } from "../logic/backend.ts";
 
 const Filters = () => {
   const { t } = useTranslation();
@@ -22,11 +22,11 @@ const Filters = () => {
     toggleShowFilter: toggleCourses,
   } = useShowFilter();
 
-  const handleSelect = (selectedOption: any) => {
-    setSelectedCities(selectedOption);
+  const handleSelect = (selectedOptions: string[]) => {
+    setSelectedCities(selectedOptions);
   };
 
-  const handleSearch = (event: any) => {
+  const handleSearch = (event: SyntheticEvent) => {
     event.preventDefault();
     console.log(selectedCities);
   };
@@ -69,7 +69,7 @@ const Filters = () => {
       </div>
       {showCourses && (
         <div className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-4 border-dark-300 p-4 rounded-xl">
-          {(t("courses", { returnObjects: true }) as any).map((course: any) => {
+          {(t("courses", { returnObjects: true }) as any).map((course: string) => {
             return <Checkbox key={course} id={course} label={course} />;
           })}
         </div>

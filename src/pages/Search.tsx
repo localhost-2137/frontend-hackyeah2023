@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import Filters from "../components/Filters.tsx";
 import AcademyList from "../components/AcademyList.tsx";
 import { motion } from "framer-motion";
+import { University } from "../logic/types.ts";
 
 const Search = () => {
-  const [universities, setUniversities] = useState<any>([]);
+  const [universities, setUniversities] = useState<University[]>([]);
 
   useEffect(() => {
     const getData = async () => {

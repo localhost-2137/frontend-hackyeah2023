@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 import Button from "../../components/ui/Button";
 import { useEffect, useState } from "react";
-import { surveyAnswersAtom } from "../../atoms";
+import { surveyAnswersAtom } from "../../logic/atoms";
 import { useSetAtom } from "jotai";
 
 export default function SurveyComponent() {
