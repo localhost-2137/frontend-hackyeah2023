@@ -14,9 +14,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) 
     const {className} = props
 
     return (
-        <input {...props} className={`border-add1-300 border-4 p-4 py-3 shadow-button-add1 rounded ${className}`}
-               ref={ref}/>
-    )
+      <input
+        {...props}
+        className={`border-dark-300 border-4 px-4 py-2 text-xl shadow-button-add1 rounded ${className}`}
+        ref={ref}
+      />
+    );
 })
 
 export default Input
