@@ -1,4 +1,4 @@
-const BACKEND_ORIGIN = "http://hackyeah.filipton.space/api/";
+const BACKEND_ORIGIN = "https://hackyeah.filipton.space/api/";
 
 const backendRequest = (path: string, method = "GET", body?: unknown) => {
     return fetch(BACKEND_ORIGIN + path, {
