@@ -6,6 +6,7 @@ const AcademyList = (props: {
     universities: University[];
 }) => {
     return (
+
         <div className="flex flex-col justify-center gap-6 cursor-pointer">
             {props.universities.map((university: University, i: number) => {
                 return (
@@ -21,6 +22,7 @@ const AcademyList = (props: {
                         </Link>
                     </motion.div>
                 );
+
             })}
         </div>
     );
