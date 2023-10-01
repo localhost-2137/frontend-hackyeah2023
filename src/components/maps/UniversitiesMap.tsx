@@ -13,13 +13,21 @@ const UniversitiesMap = ({universities}: UniversitiesMapProps) => {
         lng: 19.1451
     }
 
+    const showInfo = () => {
+
+    }
+
     return (
         <div className="w-full h-[600px]">
             <GoogleMapReact bootstrapURLKeys={{key: 'AIzaSyBBrgkDjBbbVikmSAVbSo85hTemAxKOCfc'}}
-                            defaultCenter={center} defaultZoom={4} yesIWantToUseGoogleMapApiInternals>
+                            defaultCenter={center} defaultZoom={6} yesIWantToUseGoogleMapApiInternals>
                 {universities && universities.map(university => {
-                    <Marker lat={university.lat} lng={university.lng} key={university.id}/>
+                    return <Marker isLink={true} universityId={university.id} lat={university.lat} lng={university.lng}
+                                   key={university.id}/>
                 })}
+                <div>
+
+                </div>
             </GoogleMapReact>
         </div>
     )

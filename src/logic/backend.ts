@@ -15,12 +15,17 @@ export const getAllCities = async () => {
     return await response.json();
 };
 
+export const getAllUniversities = async () => {
+    const response = await backendRequest("search?cities&subjects");
+    return await response.json();
+}
+
 export const searchUniversities = async (query: string) => {
     const response = await backendRequest("search" + query);
     return await response.json();
 };
 
 export const getSingleUniversity = async (id: number) => {
-  const response = await backendRequest("university/" + id);
-  return await response.json();
+    const response = await backendRequest("university/" + id);
+    return await response.json();
 };
