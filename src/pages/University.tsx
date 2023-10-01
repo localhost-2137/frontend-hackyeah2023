@@ -38,7 +38,6 @@ const University = () => {
     }, [id]);
 
     const addToFav = () => {
-        console.log("chuj")
         const fav = localStorage.getItem("favourites");
 
         if (fav) {
