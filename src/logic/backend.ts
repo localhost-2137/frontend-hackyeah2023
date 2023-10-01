@@ -29,3 +29,8 @@ export const getSingleUniversity = async (id: number) => {
     const response = await backendRequest("university/" + id);
     return await response.json();
 };
+
+export const getAnswersByUserInputFromSurvey = async (userInput: any) => {
+    const response = await backendRequest("ai", "POST", userInput);
+    return await response.json();
+};

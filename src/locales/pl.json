@@ -72,7 +72,7 @@
   "survey10Option2Redirect": "16",
   "survey11Title": "Czy lubisz pracować z ludźmi?",
   "survey11Option1": "Tak",
-  "survey11Option2": "Nie", 
+  "survey11Option2": "Nie",
   "survey11Option1Redirect": "12",
   "survey11Option2Redirect": "14",
   "survey12Title": "Wolisz psychologię czy socjologię?",
@@ -96,6 +96,8 @@
   "survey15Option1": "Tak",
   "survey15Option2": "Nie",
   "survey15Option1Redirect": "16",
+  "survey15Option2Redirect": "16",
+  "survey16Title": "Potężny silnik AI powiedział nam, że najlepszym wyborem dla Ciebie będzie studiowanie w tych miejscach:",
   "back": "Zmieniłem zdanie",
   "courses": [
     "Inne dziedziny zdrowia",
