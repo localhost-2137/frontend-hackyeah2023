@@ -144,5 +144,6 @@
   "university-students": "Liczba studentów",
   "university-academic": "Posiada akademik",
   "favourites-add": "Dodaj do ulubionych",
-  "favourites-delete": "Usuń z ulubionych"
+  "favourites-delete": "Usuń z ulubionych",
+  "favorites-none": "Nie masz jeszcze ulubionych uczelni"
 }

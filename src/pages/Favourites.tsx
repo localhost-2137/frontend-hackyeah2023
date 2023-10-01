@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import {data} from "autoprefixer";
 import {University} from "../logic/types.ts"
 import {motion} from "framer-motion";
 import {Link} from "react-router-dom";
@@ -10,8 +9,10 @@ const Favourites = () => {
     const [favourites, setFavourites] = useState<University[]>([]);
 
     useEffect(() => {
-
-        const data = JSON.parse(localStorage.getItem("favourites") ? localStorage.getItem("favourites") : "[]");
+        if (!localStorage.getItem("favourites")) return;
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const data = JSON.parse(localStorage.getItem("favourites"));
         console.log(data)
         if (data) {
             setFavourites(data);
@@ -21,6 +22,7 @@ const Favourites = () => {
 
     return (
         <section className="py-6 flex flex-col gap-6">
+            {favourites.length === 0 &&  <h3>{t("favorites-none")}</h3>}
             {favourites.map((university, i) => {
                 return (
                     <motion.div

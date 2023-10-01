@@ -144,5 +144,6 @@
   "university-students": "Number of students",
   "university-academic": "Have academic",
   "favourites-add": "Add to favourite's",
-  "favourites-delete": "Delete from favourite's"
+  "favourites-delete": "Delete from favourite's",
+  "favorites-none": "You don't have any favourite's yet"
 }

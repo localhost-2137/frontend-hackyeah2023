@@ -74,7 +74,7 @@ const University = () => {
                     key={university.id}
                     className="py-6 px-6 max-w-[1300px] w-full flex flex-col gap-6"
                 >
-                    <div className="flex sm:flex-row flex-col sm:justify-between sm:items-center gap-y-3">
+                    <div className="flex sm:flex-row flex-col sm:justify-between sm:items-center gap-3">
                         <h2 className="text-2xl">{university.name}</h2>
                         <Button type="button" variant="green" isLink={false}
                                 onClick={isFav ? deleteFromFav : addToFav}>{
