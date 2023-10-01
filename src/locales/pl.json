@@ -129,5 +129,11 @@
     "Nauki weterynaryjne",
     "Rolnictwo i leśnictwo",
     "Architektura"
-  ]
+  ],
+  "university-city": "Miasto",
+  "university-address": "Adres",
+  "university-rank": "Ranking",
+  "university-subjects": "Kierunki",
+  "university-students": "Liczba studentów",
+  "university-academic": "Posiada akademik"
 }

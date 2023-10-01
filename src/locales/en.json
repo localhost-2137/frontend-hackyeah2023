@@ -129,5 +129,11 @@
     "Veterinary Science",
     "Agriculture & Forestry",
     "Architecture"
-  ]
+  ],
+  "university-city": "City",
+  "university-address": "Address",
+  "university-rank": "Rank",
+  "university-subjects": "Subjects",
+  "university-students": "Number of students",
+  "university-academic": "Have academic"
 }
