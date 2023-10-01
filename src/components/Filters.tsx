@@ -43,7 +43,7 @@ const Filters = () => {
   return (
     <form onSubmit={handleSearch}>
       <div className="flex gap-4 items-center">
-        <h4>Localization</h4>
+        <h4>{t('localization')}</h4>
         <Button
           onClick={toggleLocalization}
           type="button"
@@ -62,7 +62,7 @@ const Filters = () => {
         </div>
       )}
       <div className="flex gap-4 items-center">
-        <h4>Coursers</h4>
+      <h4>{t('coursesStr')}</h4>
         <Button onClick={toggleCourses} type="button" className="text-xl p-0">
           {coursersBtn}
         </Button>
@@ -75,7 +75,7 @@ const Filters = () => {
         </div>
       )}
       <div className="py-4">
-        <h4>Others</h4>
+        <h4>{t('others')}</h4>
       </div>
       <div className="flex flex-col items-start p-4">
         <Checkbox id="academy" label="Consider boarding school" />
