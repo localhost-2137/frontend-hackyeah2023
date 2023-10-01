@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import Map from "../components/Map";
+import Map from "../components/maps/Map.tsx";
 import {useTranslation} from "react-i18next";
 import {getSingleUniversity} from "../logic/backend";
 import en from "../locales/en.json";
