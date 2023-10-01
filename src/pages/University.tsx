@@ -27,7 +27,7 @@ const University = () => {
             {university && (
                 <div
                     key={university.id}
-                    className="py-6 max-w-[1300px] w-full flex flex-col gap-6"
+                    className="py-6 px-6 max-w-[1300px] w-full flex flex-col gap-6"
                 >
                     <h2 className="text-2xl">{university.name}</h2>
                     <p>
