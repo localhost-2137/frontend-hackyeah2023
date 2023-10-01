@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
 import {surveyAnswersAtom} from "../../logic/atoms";
 import {useAtom} from "jotai";
 import {getAnswersByUserInputFromSurvey} from "../../logic/backend";
-import {ClockFill, SignpostSplitFill} from "react-bootstrap-icons";
+import {ClockFill, SignpostSplitFill, ArrowLeft} from "react-bootstrap-icons";
 import {Triangle} from "react-loader-spinner";
 
 export default function SurveyComponent() {
@@ -76,15 +76,15 @@ export default function SurveyComponent() {
                 id !== "16" && "justify-center"
             } mt-16 mb-16 min-h-screen px-4 gap-32`}
         >
-            <Button isLink={true} variant="yellow" to="/" className="absolute top-4 left-4">
-                {t("back")}
-            </Button>
+            <Link to="/" className="absolute top-4 left-4 text-2xl">
+                <ArrowLeft />
+            </Link>
             <p className="text-center max-[600px]:text-2xl min-[1000px]:text-4xl max-[600px]:max-w-[100%] min-[1200px]:max-w-[60%]">
                 {t(`survey${id}Title`)}
             </p>
             <div
                 className={`flex flex-col ${
-                    id !== "16" && "w-[40%] sm:w-[20%]"
+                    id !== "16" && "w-[80%] sm:w-[20%]"
                 } justify-center gap-4 w-[100%]`}
             >
                 {!(id === "16" && results) ? (
