@@ -1,4 +1,4 @@
-const BACKEND_ORIGIN = "http://10.250.166.200:8080/";
+const BACKEND_ORIGIN = "http://hackyeah.filipton.space:8080/";
 
 const backendRequest = (path: string, method = "GET", body?: unknown) => {
     return fetch(BACKEND_ORIGIN + path, {
