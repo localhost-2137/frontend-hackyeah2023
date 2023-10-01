@@ -7,7 +7,7 @@ type ButtonProps = {
   className?: string;
   isLink?: boolean;
   to?: string;
-  variant?: "green" | "red" | "yellow";
+  variant?: "green" | "red" | "yellow" | "blue";
   onClick?: () => void;
 };
 
@@ -81,6 +81,27 @@ const Button = ({
           </button>
         );
       }
+    case "blue":
+      if (isLink && to) {
+        return (
+          <Link
+            to={to}
+            className={`bg-dark-300 hover:bg-dark-500 border-4 border-dark-400 px-3 py-2 hover:text-add3-300 text-yellow-200 rounded-full text-center ${className}`}
+            onClick={onClick}
+          >
+            {children}
+          </Link>
+        );
+      } else {
+        return (
+          <button
+            className={`bg-dark-300 hover:bg-dark-500 border-4 border-dark-400 px-3 py-2 hover:text-add3-300 text-yellow-200 rounded-full text-center ${className}`}
+          >
+            {children}
+          </button>
+        );
+      }
+      
   }
 
   return (

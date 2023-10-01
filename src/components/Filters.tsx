@@ -116,6 +116,9 @@ const Filters = (props: {
             <div className="flex flex-col items-start mb-4">
                 <Checkbox id="academy" label={t("considerBoardingSchool")} />
             </div>
+            <Button type="button" variant="blue">
+                {t("clear")}
+            </Button>
             <Button type="submit" variant="red">
                 {t("search")}
             </Button>

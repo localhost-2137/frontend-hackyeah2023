@@ -5,8 +5,6 @@ import {t} from "i18next";
 
 const AcademyList = (props: { universities: University[] }) => {
 
-    console.log(props.universities);
-
     return (
         <div className="flex flex-col justify-center gap-6 cursor-pointer">
             {props.universities.map((university: University, i: number) => {
