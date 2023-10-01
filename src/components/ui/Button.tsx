@@ -27,7 +27,7 @@ const Button = ({
           <Link
             to={to}
             onClick={onClick}
-            className={`bg-dark-100 hover:bg-dark-300 border-4 border-dark-300 px-3 py-2 hover:text-add3-300 text-add3-300 rounded-full ${className}`}
+            className={`bg-dark-100 hover:bg-dark-300 border-4 border-dark-300 px-3 py-2 hover:text-add3-300 text-add3-300 rounded-full text-center ${className}`}
           >
             {children}
           </Link>
@@ -35,7 +35,7 @@ const Button = ({
       } else {
         return (
           <button
-            className={`bg-dark-100 hover:bg-dark-300 border-4 border-dark-300 px-3 py-2 hover:text-add3-300 text-add3-300 rounded-full ${className}`}
+            className={`bg-dark-100 hover:bg-dark-300 border-4 border-dark-300 px-3 py-2 hover:text-add3-300 text-add3-300 rounded-full text-center ${className}`}
           >
             {children}
           </button>
@@ -46,7 +46,7 @@ const Button = ({
         return (
           <Link
             to={to}
-            className={`bg-add2-100 hover:bg-add2-300 border-4 border-add2-300 px-3 py-2 hover:text-add3-300 text-add3-300 rounded-full ${className}`}
+            className={`bg-add2-100 hover:bg-add2-300 border-4 border-add2-300 px-3 py-2 hover:text-add3-300 text-add3-300 rounded-full text-center ${className}`}
             onClick={onClick}
           >
             {children}
@@ -55,7 +55,7 @@ const Button = ({
       } else {
         return (
           <button
-            className={`bg-add2-100 hover:bg-add2-300 border-4 border-add2-300 px-3 py-2 hover:text-add3-300 text-add3-300 rounded-full ${className}`}
+            className={`bg-add2-100 hover:bg-add2-300 border-4 border-add2-300 px-3 py-2 hover:text-add3-300 text-add3-300 rounded-full text-center ${className}`}
           >
             {children}
           </button>
@@ -66,7 +66,7 @@ const Button = ({
         return (
           <Link
             to={to}
-            className={`bg-add3-100 hover:bg-add3-300 border-4 border-add3-300 px-3 py-2 hover:text-add3-100 text-add3-500 rounded-full ${className}`}
+            className={`bg-add3-100 hover:bg-add3-300 border-4 border-add3-300 px-3 py-2 hover:text-add3-100 text-add3-500 rounded-full text-center ${className}`}
             onClick={onClick}
           >
             {children}
@@ -75,7 +75,7 @@ const Button = ({
       } else {
         return (
           <button
-            className={`bg-add3-100 hover:bg-add3-300 border-4 border-add3-300 px-3 py-2 hover:text-add3-100 text-add3-500 rounded-full ${className}`}
+            className={`bg-add3-100 hover:bg-add3-300 border-4 border-add3-300 px-3 py-2 hover:text-add3-100 text-add3-500 rounded-full text-center ${className}`}
           >
             {children}
           </button>

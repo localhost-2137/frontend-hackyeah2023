@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 import Button from "../../components/ui/Button";
 import { useEffect, useState } from "react";
-import { surveyAnswersAtom } from "../../atoms";
+import { surveyAnswersAtom } from "../../logic/atoms";
 import { useSetAtom } from "jotai";
 
 export default function SurveyComponent() {
@@ -31,7 +31,7 @@ export default function SurveyComponent() {
       exit={{ opacity: 0 }}
       className="flex flex-col items-center justify-center h-screen px-4 gap-32"
     >
-      <Link to="/" className="absolute top-4 left-4">I've changed my mind</Link>
+      <Link to="/" className="absolute top-4 left-4">{t('back')}</Link>
       <p className="text-center max-[600px]:text-2xl min-[1000px]:text-4xl max-[600px]:max-w-[100%] min-[1200px]:max-w-[60%]">
         {t(`survey${id}Title`)}
       </p>
