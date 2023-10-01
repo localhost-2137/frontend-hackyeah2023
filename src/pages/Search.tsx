@@ -31,7 +31,7 @@ const Search = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
-      className="flex w-full max-w-[90%] mx-auto my-6 gap-10 max-[600px]:flex-col max-[600px]:gap-0 box-border max-[1100]:p-8"
+      className="flex mx-auto w-full max-w-[90%] justify-center my-6 sm:gap-10 sm:flex-row flex-col gap-0 p-8"
     >
       <Filters handleSearch={handleSearch} />
       <div className="w-[2px] min-h-full bg-dark-300"></div>

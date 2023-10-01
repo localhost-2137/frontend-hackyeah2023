@@ -60,7 +60,7 @@ const Filters = (props: {
     return (
       <form
         onSubmit={handleSearch}
-        className="max-[600px]:w-[90%] max-[600px]:flex max-[600px]:flex-col max-[600px]:gap-4 max-[600px]:mx-auto max-[600px]:mb-8"
+        className="w-[90%] flex flex-col gap-4 mx-auto mb-8"
       >
         <div className="flex gap-4 items-center">
           <h4>{t("localization")}</h4>
@@ -78,9 +78,16 @@ const Filters = (props: {
         <div className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-4 border-dark-300 p-4 rounded-xl box-border">
           {(t("courses", { returnObjects: true }) as any).map(
             (course: string) => {
-              return <Checkbox key={course} id={course} label={course} onChange={(event) => {
-                        handleCourseSelect(course, event.target.checked);
-                    }} />;
+              return (
+                <Checkbox
+                  key={course}
+                  id={course}
+                  label={course}
+                  onChange={(event) => {
+                    handleCourseSelect(course, event.target.checked);
+                  }}
+                />
+              );
             }
           )}
         </div>
