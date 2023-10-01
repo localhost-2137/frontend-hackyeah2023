@@ -142,5 +142,7 @@
   "university-rank": "Ranking",
   "university-subjects": "Kierunki",
   "university-students": "Liczba studentów",
-  "university-academic": "Posiada akademik"
+  "university-academic": "Posiada akademik",
+  "favourites-add": "Dodaj do ulubionych",
+  "favourites-delete": "Usuń z ulubionych"
 }

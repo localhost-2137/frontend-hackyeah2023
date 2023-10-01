@@ -20,6 +20,11 @@ export const getAllUniversities = async () => {
     return await response.json();
 }
 
+export const getAllUniversitiesForMap = async () => {
+    const response = await backendRequest("universities/location");
+    return await response.json();
+}
+
 export const searchUniversities = async (query: string) => {
     const response = await backendRequest("search" + query);
     return await response.json();

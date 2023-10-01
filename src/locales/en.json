@@ -142,5 +142,7 @@
   "university-rank": "Rank",
   "university-subjects": "Subjects",
   "university-students": "Number of students",
-  "university-academic": "Have academic"
+  "university-academic": "Have academic",
+  "favourites-add": "Add to favourite's",
+  "favourites-delete": "Delete from favourite's"
 }

@@ -6,11 +6,14 @@ import {getSingleUniversity} from "../logic/backend";
 import en from "../locales/en.json";
 import pl from "../locales/pl.json";
 import i18n from "../logic/i18n";
+import Button from "../components/ui/Button";
 
 const University = () => {
     const {t} = useTranslation();
     const [university, setUniversity] = useState<any>([]);
+    const [isFav, setIsFav] = useState<boolean>(false);
     const {id} = useParams();
+
     useEffect(() => {
         const getData = async () => {
             if (!id) return;
@@ -18,9 +21,52 @@ const University = () => {
             console.log(response);
             setUniversity(response);
         };
-        getData();
+
+        getData().then(() => {
+
+            const fav = localStorage.getItem("favourites");
+
+            if (fav) {
+                const favArray = JSON.parse(fav);
+                favArray.forEach((fav: any) => {
+                    if (fav.id === university.id) {
+                        setIsFav(true)
+                    }
+                });
+            }
+        });
     }, [id]);
 
+    const addToFav = () => {
+        console.log("chuj")
+        const fav = localStorage.getItem("favourites");
+
+        if (fav) {
+            const favArray = JSON.parse(fav);
+            favArray.push(university);
+            localStorage.setItem("favourites", JSON.stringify(favArray));
+            setIsFav(true);
+        } else {
+            const favArray = [];
+            favArray.push(university);
+            console.log(favArray);
+            localStorage.setItem("favourites", JSON.stringify(favArray));
+            setIsFav(true);
+        }
+    }
+
+    const deleteFromFav = () => {
+        const fav = localStorage.getItem("favourites");
+
+        if (fav) {
+            const favArray = JSON.parse(fav);
+            const newFavArray = favArray.filter((fav: any) => {
+                return fav.id !== university.id;
+            });
+            localStorage.setItem("favourites", JSON.stringify(newFavArray));
+            setIsFav(false);
+        }
+    }
 
     return (
         <>
@@ -29,7 +75,13 @@ const University = () => {
                     key={university.id}
                     className="py-6 px-6 max-w-[1300px] w-full flex flex-col gap-6"
                 >
-                    <h2 className="text-2xl">{university.name}</h2>
+                    <div className="flex sm:flex-row flex-col sm:justify-between sm:items-center gap-y-3">
+                        <h2 className="text-2xl">{university.name}</h2>
+                        <Button type="button" variant="green" isLink={false}
+                                onClick={isFav ? deleteFromFav : addToFav}>{
+                            isFav ? t("favourites-delete") : t("favourites-add")
+                        }</Button>
+                    </div>
                     <p>
                         {t("university-city")}: {university.city}
                     </p>
@@ -56,9 +108,11 @@ const University = () => {
                                 }
                             });
                             if (i18n.language === "pl") {
-                                return (<p className="bg-dark-300 px-4 py-2">{pl.courses[indexValue]}</p>);
+                                return (
+                                    <p key={indexValue} className="bg-dark-300 px-4 py-2">{pl.courses[indexValue]}</p>);
                             } else {
-                                return (<p className="bg-dark-300 px-4 py-2">{en.courses[indexValue]}</p>);
+                                return (
+                                    <p key={indexValue} className="bg-dark-300 px-4 py-2">{en.courses[indexValue]}</p>);
                             }
                         })}
                     </div>

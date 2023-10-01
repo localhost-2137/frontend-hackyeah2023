@@ -7,6 +7,7 @@ import IndexInfo from "./components/IndexInfo.tsx";
 import SurveyComponent from "./pages/Survey/SurveyComponent.tsx";
 import Search from "./pages/Search.tsx";
 import University from "./pages/University.tsx";
+import Favourites from "./pages/Favourites.tsx";
 
 const App = () => {
     const element = useRoutes([
@@ -16,7 +17,8 @@ const App = () => {
             children: [
                 {path: "/", element: <IndexInfo/>},
                 {path: "/search", element: <Search/>},
-                {path: "/university/:id", element: <University/>}
+                {path: "/university/:id", element: <University/>},
+                {path: "/favourites", element: <Favourites/>},
             ],
         },
         {
