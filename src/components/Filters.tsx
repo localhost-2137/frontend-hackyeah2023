@@ -69,7 +69,7 @@ const Filters = (props: {
                     placeholder={t("city")}
                 />
             </div>
-            <div className="flex gap-4 items-center mt-3 mb-3">
+            <div className="flex gap-4 items-center mt-3 mb-3 py-4">
                 <h4>{t('coursesStr')}</h4>
             </div>
             <div className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-4 border-dark-300 p-4 rounded-xl">
