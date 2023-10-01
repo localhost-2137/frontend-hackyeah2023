@@ -1,8 +1,10 @@
 import {motion} from "framer-motion"
 import {Outlet, Link} from "react-router-dom"
 import LanguageSwitcher from "../components/LanguageSwitcher";
+import { Search as SearchIcon} from "react-bootstrap-icons"
 
 const Main = () => {
+
 
     return (
       <motion.div
@@ -20,7 +22,7 @@ const Main = () => {
               to="/search"
               className="text-3xl text-add3-300 hover:text-add3-500"
             >
-              Search
+              <SearchIcon />
             </Link>
             <LanguageSwitcher />
           </div>
