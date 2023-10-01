@@ -4,7 +4,7 @@ import Map from "../components/Map";
 
 const University = () => {
 
-    const [university, setUniversity] = useState([])
+    const [university, setUniversity] = useState<any>([])
     const {id} = useParams()
 
     useEffect(() => {
@@ -14,7 +14,7 @@ const University = () => {
             const data = await response.json()
 
             if (response.ok) {
-                const result = data.filter(university => university.id == id)
+                const result = data.filter((university: any) => university.id == id)
                 console.log(result)
                 setUniversity(result)
             }
@@ -26,9 +26,9 @@ const University = () => {
 
     return (
         <>
-            {university.map(university => {
+            {university.map((university: any) => {
                 return (
-                    <div className="py-6 max-w-[1300px] w-full flex flex-col gap-6">
+                    <div className="py-6 max-w-[1300px] w-full flex flex-col gap-6" key={university.id}>
                         <h2 className="text-2xl">{university.name}</h2>
                         <div className="flex justify-between items-center">
                             <p>address: {university.address}</p>
