@@ -66,7 +66,7 @@ const Button = ({
         return (
           <Link
             to={to}
-            className={`bg-add3-100 hover:bg-add3-300 border-4 border-add3-300 px-3 py-2 hover:text-add3-100 text-add3-500 rounded-full text-center ${className}`}
+            className={`bg-add3-100 hover:bg-add3-300 border-4 border-add3-300 px-3 py-2 hover:text-dark-700 text-dark-900 rounded-full text-center ${className}`}
             onClick={onClick}
           >
             {children}
