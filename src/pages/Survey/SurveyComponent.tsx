@@ -1,19 +1,21 @@
-import {motion} from "framer-motion";
-import {useTranslation} from "react-i18next";
-import {Link, useParams} from "react-router-dom";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { Link, useParams } from "react-router-dom";
 import Button from "../../components/ui/Button";
-import {useEffect, useState} from "react";
-import {surveyAnswersAtom} from "../../logic/atoms";
-import {useAtom} from "jotai";
-import {getAnswersByUserInputFromSurvey} from "../../logic/backend";
-import {ClockFill, SignpostSplitFill, ArrowLeft} from "react-bootstrap-icons";
-import {Triangle} from "react-loader-spinner";
+import { useEffect, useState } from "react";
+import { surveyAnswersAtom } from "../../logic/atoms";
+import { useAtom } from "jotai";
+import { getAnswersByUserInputFromSurvey } from "../../logic/backend";
+import { ClockFill, SignpostSplitFill, ArrowLeft } from "react-bootstrap-icons";
+import { Triangle } from "react-loader-spinner";
+import en from "../../locales/en.json";
+import pl from "../../locales/pl.json"; 
 
 export default function SurveyComponent() {
     const [surveyAnswers, setSurveyAnswers] = useAtom(surveyAnswersAtom);
     const [results, setResults] = useState<any>([]);
     const id = useParams().id;
-    const {t, i18n} = useTranslation();
+    const { t, i18n } = useTranslation();
     const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
     };
@@ -43,7 +45,7 @@ export default function SurveyComponent() {
             if ("geolocation" in navigator) {
                 navigator.geolocation.getCurrentPosition(
                     (position) => {
-                        const {latitude, longitude} = position.coords;
+                        const { latitude, longitude } = position.coords;
                         setIsLoading(true);
                         fetchData(latitude, longitude);
                     },
@@ -69,12 +71,11 @@ export default function SurveyComponent() {
 
     return (
         <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            exit={{opacity: 0}}
-            className={`flex flex-col items-center ${
-                id !== "16" && "justify-center"
-            } mt-16 mb-16 min-h-screen px-4 gap-32`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className={`flex flex-col items-center ${id !== "16" && "justify-center"
+                } mt-16 mb-16 min-h-screen px-4 gap-32`}
         >
             <Link to="/" className="absolute top-4 left-4 text-2xl">
                 <ArrowLeft />
@@ -83,9 +84,8 @@ export default function SurveyComponent() {
                 {t(`survey${id}Title`)}
             </p>
             <div
-                className={`flex flex-col ${
-                    id !== "16" && "w-[80%] sm:w-[20%]"
-                } justify-center gap-4 w-[100%]`}
+                className={`flex flex-col ${id !== "16" && "w-[80%] sm:w-[20%]"
+                    } justify-center gap-4 w-[100%]`}
             >
                 {!(id === "16" && results) ? (
                     buttons.map((button: any, i: any) => (
@@ -134,9 +134,9 @@ export default function SurveyComponent() {
                     results.map((result: any, i: any) => {
                         return (
                             <motion.div
-                                initial={{opacity: 0}}
-                                animate={{opacity: 1, transition: {delay: 0.15 * i}}}
-                                exit={{opacity: 0}}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1, transition: { delay: 0.15 * i } }}
+                                exit={{ opacity: 0 }}
                                 key={i}
                                 className="p-4 border-2 border-dark-300 hover:bg-dark-500 rounded-xl transition-colors duration-300 max-[800px]:w-[90%] max-[800px]:items-center max-[800px]:mx-auto max-[800px]:text-center overflow-x-hidden"
                             >
@@ -145,20 +145,26 @@ export default function SurveyComponent() {
                                     <div className="flex flex-row flex-wrap gap-2  mb-4">
                                         {result.subjects &&
                                             result.subjects.map((subject: any, i: number) => {
-                                                return (
-                                                    <p
-                                                        className="background bg-dark-300 px-4 py-2 rounded-full"
-                                                        key={i}
-                                                    >
-                                                        {subject}
-                                                    </p>
-                                                );
+                                                let indexValue = -1;
+                                                en.courses.forEach((course: string, index: number) => {
+                                                    if (course === subject) {
+                                                        indexValue = index;
+                                                    }
+                                                });
+                                                if (i18n.language === "pl") {
+                                                    return (<p className="background bg-dark-300 px-4 py-2 rounded-full"
+                                                        key={i}>{pl.courses[indexValue]}</p>);
+                                                } else {
+                                                    return (<p className="background bg-dark-300 px-4 py-2 rounded-full"
+                                                        key={i}>{subject}</p>);
+                                                }
+
                                             })}
                                     </div>
                                     <div className="flex items-center justify-center gap-2">
-                                        <ClockFill/>
+                                        <ClockFill />
                                         {`${Math.ceil(result.time / 60)} minut`}{" "}
-                                        <SignpostSplitFill/>
+                                        <SignpostSplitFill />
                                         {`${Math.round(result.distance / 1000)} km`}
                                     </div>
                                 </Link>

@@ -19,6 +19,7 @@ function LanguageSwitcher() {
           setIsEn(true);
         }}
         className="cursor-pointer hover:opacity-80"
+        title="English"
       >
         <ReactCountryFlag
           className="emojiFlag"
@@ -35,6 +36,7 @@ function LanguageSwitcher() {
           setIsEn(false);
         }}
         className="cursor-pointer hover:opacity-80"
+        title="Polski"
       >
         <ReactCountryFlag
           className="emojiFlag"
