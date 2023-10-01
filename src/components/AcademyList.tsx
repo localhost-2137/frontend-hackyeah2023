@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { University } from "../logic/types";
+import { t } from "i18next";
 
 const AcademyList = (props: { universities: University[] }) => {
   return (
@@ -19,8 +20,8 @@ const AcademyList = (props: { universities: University[] }) => {
               key={university.id}
             >
               <h4 className="text-xl">{university.name}</h4>
-              <p>Address: {university.address}</p>
-              <p>Rank: {university.rank}</p>
+              <p>{t('address')}: {university.address}</p>
+              <p>{t('rank')}: {university.rank}</p>
             </Link>
           </motion.div>
         );
