@@ -3,6 +3,7 @@ import Filters from "../components/Filters.tsx";
 import AcademyList from "../components/AcademyList.tsx";
 import { motion } from "framer-motion";
 import { University } from "../logic/types.ts";
+import { searchUniversities } from "../logic/backend.ts";
 
 const Search = () => {
   const [universities, setUniversities] = useState<University[]>([]);
@@ -19,6 +20,12 @@ const Search = () => {
     getData();
   }, []);
 
+  const handleSearch = async (query: string) => {
+    const data = await searchUniversities(query);
+    setUniversities(data);
+  };
+
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -26,7 +33,7 @@ const Search = () => {
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
       className="flex w-full max-w-[1300px] mx-auto my-6 px-6 gap-10"
     >
-      <Filters />
+      <Filters handleSearch={handleSearch} />
       <div className="w-[2px] min-h-full bg-dark-300"></div>
       <AcademyList universities={universities} />
     </motion.div>
