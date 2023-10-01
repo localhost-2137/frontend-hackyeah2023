@@ -1,5 +1,4 @@
 import Button from "./ui/Button.tsx";
-import { useShowFilter } from "../hooks/useShowFilter.tsx";
 import Checkbox from "./ui/Checkbox.tsx";
 import Autocomplete from "./ui/Autocomplete.tsx";
 import { useTranslation } from "react-i18next";
