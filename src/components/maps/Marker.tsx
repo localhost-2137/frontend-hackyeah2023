@@ -2,8 +2,10 @@ import {Link} from "react-router-dom";
 
 type markerProps = {
     isLink?: boolean,
-    universityId?: number
-    onMouseOver?: () => void
+    universityId?: number,
+    onMouseOver?: () => void,
+    lat: number,
+    lng: number,
 }
 
 const Marker = ({isLink, universityId, onMouseOver}: markerProps) => {

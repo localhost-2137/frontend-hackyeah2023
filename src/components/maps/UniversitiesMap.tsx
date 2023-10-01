@@ -1,6 +1,6 @@
 import GoogleMapReact from 'google-map-react';
-import {University} from "../../logic/types.ts";
 import Marker from "./Marker.tsx";
+import {University} from "../../logic/types.ts";
 
 type UniversitiesMapProps = {
     universities: University[]
@@ -11,10 +11,6 @@ const UniversitiesMap = ({universities}: UniversitiesMapProps) => {
     const center = {
         lat: 51.9194,
         lng: 19.1451
-    }
-
-    const showInfo = () => {
-
     }
 
     return (
@@ -30,7 +26,7 @@ const UniversitiesMap = ({universities}: UniversitiesMapProps) => {
                 </div>
             </GoogleMapReact>
         </div>
-    )
-}
+    );
+};
 
-export default UniversitiesMap
+export default UniversitiesMap;

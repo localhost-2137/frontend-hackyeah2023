@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import Button from "./ui/Button";
-import UniversitiesMap from "./maps/UniversitiesMap.tsx";
 import { motion } from "framer-motion";
 
 const IndexInfo = () => {

@@ -2,7 +2,6 @@ import {motion} from "framer-motion"
 import {Outlet, Link} from "react-router-dom"
 import LanguageSwitcher from "../components/LanguageSwitcher";
 import {Search as SearchIcon} from "react-bootstrap-icons"
-import UniversitiesMap from "../components/maps/UniversitiesMap.tsx";
 
 const Main = () => {
 
@@ -32,36 +31,6 @@ const Main = () => {
             </header>
             <main className="flex-1">
                 <Outlet/>
-                <UniversitiesMap universities={
-                    [
-                        {
-                            "academic": true,
-                            "address": "Gołębia 24, 31-007 Kraków, Polska",
-                            "city": "Kraków",
-                            "id": 1,
-                            "lat": 50.0610645,
-                            "lng": 19.9328982,
-                            "name": "Uniwersytet Jagielloński",
-                            "number_students": 34309,
-                            "rank": 795,
-                            "subjects": "Other Health,Chemistry,Economics & Econometrics,Geology, Environmental, Earth & Marine Sciences,History, Philosophy & Theology,Psychology,Politics & International Studies (incl Development Studies),Law,Languages, Literature & Linguistics,Physics & Astronomy,Medicine & Dentistry,Communication & Media Studies,Sociology,Accounting & Finance,Mathematics & Statistics,Art, Performing Arts & Design,Business & Management,Geography,Computer Science,Archaeology,Biological Sciences,Education",
-                            "url": "/world-university-rankings/jagiellonian-university"
-                        },
-                        {
-                            "academic": true,
-                            "address": "Krakowskie Przedmieście 26/28, 00-927 Warszawa, Polska",
-                            "city": "Warszawa",
-                            "id": 2,
-                            "lat": 52.2403463,
-                            "lng": 21.0186012,
-                            "name": "Uniwersytet Warszawski",
-                            "number_students": 34342,
-                            "rank": 839,
-                            "subjects": "Accounting & Finance,Chemistry,Law,Biological Sciences,Communication & Media Studies,Sociology,Physics & Astronomy,Education,Politics & International Studies (incl Development Studies),Economics & Econometrics,Archaeology,Geology, Environmental, Earth & Marine Sciences,Business & Management,Geography,History, Philosophy & Theology,Psychology,Art, Performing Arts & Design,Computer Science,Medicine & Dentistry,Mathematics & Statistics,Languages, Literature & Linguistics",
-                            "url": "/world-university-rankings/university-warsaw"
-                        }
-                    ]
-                }/>
             </main>
         </motion.div>
     );

@@ -18,7 +18,7 @@ const Map = ({lat, lng}: MapProps) => {
             <GoogleMapReact bootstrapURLKeys={{key: 'AIzaSyBBrgkDjBbbVikmSAVbSo85hTemAxKOCfc'}}
                             defaultCenter={center} defaultZoom={11} yesIWantToUseGoogleMapApiInternals
             >
-                <Marker lat={lat} lng={lng} text=""/>
+                <Marker lat={lat} lng={lng} />
             </GoogleMapReact>
         </div>
     )
