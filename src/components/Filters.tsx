@@ -1,5 +1,4 @@
 import Button from "./ui/Button.tsx";
-import { useShowFilter } from "../hooks/useShowFilter.tsx";
 import Checkbox from "./ui/Checkbox.tsx";
 import Autocomplete from "./ui/Autocomplete.tsx";
 import { useTranslation } from "react-i18next";
@@ -42,7 +41,7 @@ const Filters = () => {
                     placeholder={t("city")}
                 />
             </div>
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-4 items-center mt-3 mb-3">
                 <h4>{t('coursesStr')}</h4>
             </div>
             <div className="flex flex-col items-start gap-4 max-h-[300px] overflow-scroll border-4 border-dark-300 p-4 rounded-xl">
