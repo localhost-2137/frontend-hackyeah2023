@@ -51,7 +51,6 @@ const Filters = (props: {
     useEffect(() => {
         const getData = async () => {
             const data = await getAllCities();
-            console.log(data);
             setCities(data);
         };
         getData();
